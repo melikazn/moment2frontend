@@ -1,54 +1,24 @@
-# React + TypeScript + Vite
+# Todo List Application
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Projektöversikt
 
-Currently, two official plugins are available:
+Detta är en Todo-listapplikation som använder **React** för frontend och en **Node.js/Express**-backend för att hantera Todo-uppgifter. Applikationen låter användaren lägga till, uppdatera och ta bort Todo-uppgifter, samt hålla reda på deras status (`Ej påbörjad`, `Pågående`, `Avklarad`).
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Teknologier
 
-## Expanding the ESLint configuration
+### Frontend
+- **React**: Används för att bygga användargränssnittet (UI) och hantera tillstånd med `useState` och `useEffect`.
+- **CSS**: För att styla komponenterna och göra applikationen responsiv.
+- **Axios**: För att hantera HTTP-anrop till backend (GET, POST, PUT, DELETE).
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### Backend
+- **Node.js** och **Express**: Används för att skapa en REST API som hanterar Todo-uppgifter.
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+## Funktioner
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+- **Lägga till en Todo**: Användare kan lägga till en ny uppgift med titel och beskrivning.
+- **Uppdatera Todo-status**: Användare kan uppdatera statusen på en uppgift (Ej påbörjad, Pågående, Avklarad).
+- **Ta bort en Todo**: Användare kan ta bort en Todo-uppgift från listan.
+- **Validering**: Applikationen validerar input innan en Todo sparas (titel minst 3 tecken, beskrivning max 200 tecken).
+- **Framgångsmeddelanden**: Efter att en Todo har lagts till visas ett framgångsmeddelande som försvinner efter 3 sekunder.
+- **Felhantering**: Vid eventuella fel vid API-anrop visas felmeddelanden för användaren.
