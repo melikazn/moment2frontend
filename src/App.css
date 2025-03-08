@@ -1,0 +1,214 @@
+/* Grundläggande styling för hela sidan */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f8f1e4;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  color: #333;
+}
+
+/* Huvud container för Todo-applikationen */
+div {
+  max-width: 800px;
+  width: 100%;
+  margin: 20px;
+  padding: 20px;
+  border-radius: 8px;
+  background-color: white;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+}
+
+/* Header-styling */
+h1 {
+  text-align: center;
+  color: #d83b4d; 
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+/* Styling för formulär */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+input, textarea, select, button {
+  padding: 12px;
+  border: 2px solid #d83b4d; 
+  border-radius: 5px;
+  font-size: 1rem;
+  outline: none;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+input, textarea, select {
+  width: 100%;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+button {
+  background-color: #d83b4d;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  width: 100%;
+}
+
+button:hover {
+  background-color: #e48a96; 
+}
+
+/* Visar framgångs- och felmeddelanden */
+p {
+  font-size: 1rem;
+}
+
+p[style='color: red'] {
+  color: #e74c3c; 
+}
+
+p[style='color: green'] {
+  color: #2ecc71; 
+}
+
+/* Styling för todo-listan */
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin-top: 20px;
+}
+
+li {
+  background-color: #f3f3f3;
+  border: 2px solid #ddd;
+  padding: 20px;
+  margin: 15px 0;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  font-size: 1rem;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+}
+
+/* Delete Button */
+li .delete-btn {
+  background-color: #e74c3c; 
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  border: none;
+  transition: background-color 0.3s;
+}
+
+li .delete-btn:hover {
+  background-color: #c0392b; 
+}
+
+/* Status knappar */
+.status-buttons {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+.status-btn {
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  border: none;
+  transition: background-color 0.3s;
+  color: white;
+  margin-bottom: 10px; 
+}
+
+.status-btn:not(.active) {
+  background-color: #f1c40f; 
+}
+
+.status-btn.active {
+  background-color: #2ecc71;
+}
+
+.status-btn:hover {
+  opacity: 0.8;
+}
+
+/* Responsiv design för mobiler och tabletter */
+@media (max-width: 768px) {
+  body {
+    padding: 20px;
+  }
+
+  div {
+    padding: 15px;
+    width: 90%;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  form {
+    width: 100%;
+  }
+
+  input, textarea, select, button {
+    padding: 10px;
+    font-size: 1rem;
+  }
+
+  li {
+    font-size: 0.9rem;
+    padding: 15px;
+  }
+
+  .status-btn {
+    padding: 8px 12px;
+  }
+
+  .delete-btn {
+    padding: 8px;
+  }
+
+  .status-buttons {
+    justify-content: flex-start;
+    gap: 5px;
+  }
+}
+
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  li {
+    font-size: 0.8rem;
+    padding: 12px;
+  }
+
+  button, .delete-btn, .status-btn {
+    padding: 8px;
+  }
+
+  .status-buttons {
+    flex-direction: column; 
+    gap: 10px;
+  }
+}
